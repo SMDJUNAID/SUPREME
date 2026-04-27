@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Medical Agency</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0b3d91;
+            --accent: #3bb273;
+            --white: #ffffff;
+            --text: #1f2937;
+            --border: #e5e7eb;
+        }
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .download {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 110px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            max-width: 850px;
+            margin: auto;
+            font-weight: 700;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 12px 24px;
+            margin: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 70px 8%;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        /* CARDS */
+        .card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        /* TRUST BADGE */
+        .trust-badge {
+            border-top: 4px solid var(--primary);
+            font-weight: 600;
+        }
+
+        /* PRODUCTS */
+        .product-card {
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* WHY */
+        .why {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .check {
+            color: var(--accent);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* FORM */
+        form {
+            display: grid;
+            gap: 15px;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        input {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+        }
+
+        button.submit {
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 30px;
+            /* pill shape */
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(59, 178, 115, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect */
+        button.submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 178, 115, 0.4);
+        }
+
+        /* Click effect */
+        button.submit:active {
+            transform: scale(0.97);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            /* Equal width & height */
+            height: 60px;
+            background: #3bb273;
+            /* Light Green (action color) */
+            border-radius: 50%;
+            /* Makes perfect circle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        /* Icon size control */
+        .whatsapp svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Hover effect */
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+
+            /* perfect center */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            float: right;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .modal input {
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+
+            .menu-toggle {
+                display: block;
+                color: white;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                width: 100%;
+                flex-direction: column;
+                display: none;
+                background: var(--primary);
+                margin-top: 10px;
+                padding: 10px 0;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>Supreme Medical</h2>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Certifications</a></li>
+            <li><a href="#">Export & Logistics</a></li>
+            <li><a href="#" class="download">Download Catalogue</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Reliable Global Supplier of High-Quality Generic Medicines from India</h1>
+        <div>
+            <button class="btn btn-primary" onclick="openModal()">
+                Request a Quote
+            </button>
+            <button class="btn btn-outline">View Products</button>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <section>
+        <h2 class="section-title">Certifications & Trust</h2>
+        <div class="grid">
+            <div class="card trust-badge">IEC Certified</div>
+            <div class="card trust-badge">RCMC Registered</div>
+            <div class="card trust-badge">WHO-GMP Suppliers</div>
+            <div class="card trust-badge">Global Export Presence</div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section>
+        <h2 class="section-title">Product Categories</h2>
+        <div class="grid">
+            <div class="product-card">Tablets & Capsules</div>
+            <div class="product-card">Injectables</div>
+            <div class="product-card">Antibiotics</div>
+            <div class="product-card">Oncology</div>
+            <div class="product-card">OTC Products</div>
+        </div>
+    </section>
+
+    <!-- WHY -->
+    <section>
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="why">
+            <div class="card"><span class="check">✔</span>Competitive Pricing</div>
+            <div class="card"><span class="check">✔</span>Quality Assurance</div>
+            <div class="card"><span class="check">✔</span>Global Expertise</div>
+            <div class="card"><span class="check">✔</span>Reliable Supply Chain</div>
+        </div>
+    </section>
+
+    <!-- GLOBAL -->
+    <section>
+        <h2 class="section-title">Global Reach</h2>
+        <div class="grid">
+            <div class="card">Africa</div>
+            <div class="card">Southeast Asia</div>
+            <div class="card">Middle East</div>
+            <div class="card">Latin America</div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section>
+        <h2 class="section-title">Request a Quote</h2>
+        <form onsubmit="sendFormToWhatsApp(event)">
+            <input type="text" id="f_name" placeholder="Full Name" required>
+            <input type="text" id="f_country" placeholder="Country" required>
+            <input type="text" id="f_product" placeholder="Product Required" required>
+            <input type="email" id="f_email" placeholder="Email Address" required>
+            <input type="tel" id="f_phone" placeholder="WhatsApp Number" required>
+            <button class="submit">
+                Submit Inquiry →
+            </button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Supreme Medical Agency | All Rights Reserved</p>
+        <p><a href="#" style="color:#3bb273;">Download Catalogue</a></p>
+    </footer>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/1234567890" class="whatsapp" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
+            <path
+                d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z" />
+        </svg>
+    </a>
+
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Request a Quote</h3>
+
+            <form onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="country" placeholder="Country" required>
+                <input type="text" id="product" placeholder="Product" required>
+                <input type="text" id="quantity" placeholder="Quantity" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" placeholder="WhatsApp Number" required>
+
+                <button type="submit" class="submit">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("active");
+        }
+    </script>
+
+    <script>
+        function openModal() {
+            document.getElementById("quoteModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("quoteModal").style.display = "none";
+        }
+
+        /* close when clicking outside */
+        window.onclick = function (e) {
+            let modal = document.getElementById("quoteModal");
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+
+            let message =
+                `Hello, I would like to request a quotation:
+
+Name: ${name.value}
+Country: ${country.value}
+Product: ${product.value}
+Quantity: ${quantity.value}
+Email: ${email.value}
+WhatsApp: ${phone.value}`;
+
+            let url = "https://wa.me/1234567890?text=" + encodeURIComponent(message);
+
+            window.open(url, "_blank");
+
+            closeModal();
+        }
+    </script>
+
+    <script>
+        function sendFormToWhatsApp(e) {
+            e.preventDefault(); // stop page reload
+
+            let name = document.getElementById("f_name").value;
+            let country = document.getElementById("f_country").value;
+            let product = document.getElementById("f_product").value;
+            let email = document.getElementById("f_email").value;
+            let phone = document.getElementById("f_phone").value;
+
+            let message = `Hello, I would like to request a quotation:
+
+Name: ${name}
+Country: ${country}
+Product: ${product}
+Email: ${email}
+WhatsApp: ${phone}`;
+
+            let url = "https://wa.me/1234567890?text=" + encodeURIComponent(message);
+
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Supreme Medical Agency</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0b3d91;
+            --accent: #3bb273;
+            --white: #ffffff;
+            --text: #1f2937;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: white;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 60px 8%;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        /* TEXT */
+        .about-text {
+            max-width: 520px;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .about-text p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        /* STATS */
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .stat-card {
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .stat-card h3 {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>Supreme Medical</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Certifications</a></li>
+            <li><a href="#">Export</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>About Supreme Medical Agency</h1>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="about-container">
+
+            <!-- LEFT TEXT -->
+            <div class="about-text">
+    <h3>Trusted Global Pharmaceutical Export Partner</h3>
+
+    <p>
+        Supreme Medical Agency is a reliable pharmaceutical export company based in India,
+        focused on delivering high-quality generic medicines worldwide.
+    </p>
+
+    <p>
+        We work with WHO-GMP certified manufacturers and ensure strict quality control,
+        competitive pricing, and timely delivery.
+    </p>
+
+    <p>
+        Our key markets include Africa, Southeast Asia, Middle East, and Latin America.
+    </p>
+
+    <p>
+        With a strong logistics network, we ensure safe and efficient international
+        shipping, meeting all regulatory and compliance requirements.
+    </p>
+
+    
+  
+</div>
+
+            <!-- RIGHT STATS -->
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3>10+</h3>
+                    <p>Countries Served</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>50+</h3>
+                    <p>Products</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Quality Assured</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p>Support</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Supreme Medical Agency</p>
+    </footer>
+
+</body>
+
+</html>

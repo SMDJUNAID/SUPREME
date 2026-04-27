@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Supreme Medical Agency</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0b3d91;
+            --accent: #3bb273;
+            --text: #1f2937;
+            --border: #e5e7eb;
+        }
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: white;
+            color: var(--text);
+        }
+
+        /* NAVBAR */
+        nav {
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 8%;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        /* SECTION */
+        section {
+            padding: 60px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        /* CATEGORY CARD */
+        .category {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .category h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .category ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .category li {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        /* BUTTON */
+        .btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* MOBILE */
+        @media(max-width:768px) {
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>Supreme Medical</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#">Certifications</a></li>
+            <li><a href="#">Export</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Our Product Range</h1>
+        <p>High-quality generic medicines sourced from WHO-GMP certified manufacturers in India</p>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section>
+        <h2 class="section-title">Core Export Categories</h2>
+
+        <div class="grid">
+
+            <!-- Tablets -->
+            <div class="category">
+                <h3>Tablets & Capsules</h3>
+                <ul>
+                    <li>Paracetamol</li>
+                    <li>Metformin</li>
+                    <li>Amlodipine</li>
+                    <li>Atorvastatin</li>
+                    <li>Omeprazole</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Tablets & Capsules')">Request Quote</button>
+            </div>
+
+            <!-- Antibiotics -->
+            <div class="category">
+                <h3>Antibiotics</h3>
+                <ul>
+                    <li>Amoxicillin</li>
+                    <li>Azithromycin</li>
+                    <li>Cefixime</li>
+                    <li>Ciprofloxacin</li>
+                    <li>Doxycycline</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Antibiotics')">Request Quote</button>
+            </div>
+
+            <!-- Injectables -->
+            <div class="category">
+                <h3>Injectables</h3>
+                <ul>
+                    <li>Ceftriaxone</li>
+                    <li>Diclofenac Injection</li>
+                    <li>Vitamin B Complex</li>
+                    <li>Ondansetron</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Injectables')">Request Quote</button>
+            </div>
+
+            <!-- OTC -->
+            <div class="category">
+                <h3>OTC Products</h3>
+                <ul>
+                    <li>ORS Sachets</li>
+                    <li>Multivitamins</li>
+                    <li>Antacids</li>
+                    <li>Cough Syrups</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('OTC Products')">Request Quote</button>
+            </div>
+
+            <!-- Oncology -->
+            <div class="category">
+                <h3>Oncology</h3>
+                <ul>
+                    <li>Capecitabine</li>
+                    <li>Imatinib</li>
+                    <li>Paclitaxel</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Oncology')">Request Quote</button>
+            </div>
+
+            <!-- Anti-Malarial -->
+            <div class="category">
+                <h3>Anti-Malarial</h3>
+                <ul>
+                    <li>Artemether</li>
+                    <li>Lumefantrine</li>
+                    <li>Chloroquine</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Anti-Malarial')">Request Quote</button>
+            </div>
+
+            <div class="category">
+                <h3>Anti-Diabetic</h3>
+                <ul>
+                    <li>Metformin</li>
+                    <li>Glibenclamide</li>
+                    <li>Glimepiride</li>
+                    <li>Insulin (basic range)</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Anti-Diabetic')">Request Quote</button>
+            </div>
+
+            <div class="category">
+                <h3>Cardiovascular</h3>
+                <ul>
+                    <li>Amlodipine</li>
+                    <li>Losartan</li>
+                    <li>Atenolol</li>
+                    <li>Enalapril</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Cardiovascular')">Request Quote</button>
+            </div>
+
+            <div class="category">
+                <h3>Pain Management</h3>
+                <ul>
+                    <li>Paracetamol</li>
+                    <li>Ibuprofen</li>
+                    <li>Diclofenac</li>
+                    <li>Tramadol</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Pain Management')">Request Quote</button>
+            </div>
+            <div class="category">
+                <h3>Gastrointestinal</h3>
+                <ul>
+                    <li>Omeprazole</li>
+                    <li>Pantoprazole</li>
+                    <li>Domperidone</li>
+                    <li>Loperamide</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Gastrointestinal')">Request Quote</button>
+            </div>
+
+            <div class="category">
+                <h3>Anti-Allergic</h3>
+                <ul>
+                    <li>Cetirizine</li>
+                    <li>Loratadine</li>
+                    <li>Chlorpheniramine</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Anti-Allergic')">Request Quote</button>
+            </div>
+
+            <div class="category">
+                <h3>Respiratory</h3>
+                <ul>
+                    <li>Salbutamol</li>
+                    <li>Theophylline</li>
+                    <li>Budesonide</li>
+                    <li>Ambroxol Syrup</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Respiratory')">Request Quote</button>
+            </div>
+
+            <div class="category">
+                <h3>Vitamins & Supplements</h3>
+                <ul>
+                    <li>Vitamin C</li>
+                    <li>Vitamin D3</li>
+                    <li>Calcium Tablets</li>
+                    <li>Iron + Folic Acid</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Vitamins & Supplements')">Request Quote</button>
+            </div>
+
+            <div class="category">
+                <h3>Women’s Health</h3>
+                <ul>
+                    <li>Folic Acid</li>
+                    <li>Iron Tablets</li>
+                    <li>Oral Contraceptives</li>
+                </ul>
+                <button class="btn" onclick="sendProduct('Women Health')">Request Quote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Supreme Medical Agency</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function sendProduct(product) {
+            let message = `Hello, I am interested in ${product}. Please share quotation and details.`;
+            let url = "https://wa.me/1234567890?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+
+</html>
