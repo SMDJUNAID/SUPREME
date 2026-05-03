@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - Supreme Medical Agency</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0b3d91;
+            --accent: #3bb273;
+            --text: #1f2937;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--text);
+        }
+
+        /* NAVBAR */
+        nav {
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        /* CERTIFICATIONS */
+        .certifications {
+            padding: 60px 8%;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .cert-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 25px;
+            background: #fff;
+            transition: 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .cert-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .cert-card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>Supreme Medical</h2>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="certification.html">Certifications</a></li>
+            <li><a href="exports.html">Export</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Our Certifications</h1>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="certifications">
+        <div class="cert-grid">
+
+            <div class="cert-card">
+                <h3>Drug License (20B & 21B)</h3>
+                <p>
+                    Authorized license for wholesale distribution of pharmaceutical products
+                    as per Indian drug regulations.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Import Export Code (IEC)</h3>
+                <p>
+                    Official certification issued by DGFT allowing international trade
+                    and export of pharmaceutical products.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>RCMC Certificate</h3>
+                <p>
+                    Registration Cum Membership Certificate enabling export promotion
+                    and global trade compliance.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>WHO-GMP Certification</h3>
+                <p>
+                    Ensures that our partner manufacturers follow strict Good Manufacturing
+                    Practices as per WHO standards.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>ISO Certification</h3>
+                <p>
+                    Demonstrates commitment to quality management systems and consistent
+                    product standards.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Supreme Medical Agency</p>
+    </footer>
+
+</body>
+
+</html>
