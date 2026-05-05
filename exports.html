@@ -32,6 +32,10 @@
 
         /* NAVBAR */
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             background: var(--primary);
             color: white;
             display: flex;
@@ -51,6 +55,13 @@
             text-decoration: none;
         }
 
+        nav a.active {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 3px;
+            font-weight: 600;
+            opacity: 1;
+        }
+
         /* HERO */
         .hero {
             background: var(--primary);
@@ -61,6 +72,35 @@
 
         .hero h1 {
             font-size: 2rem;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .btn {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(59, 178, 115, 0.3);
         }
 
         /* EXPORT SECTION */
@@ -112,7 +152,7 @@
 
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
         .feature-card h4 {
@@ -168,7 +208,19 @@
                 list-style: none;
             }
         }
-    
+
+        /* SCROLL ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* MOBILE MENU */
         .menu-toggle {
             display: none;
@@ -178,8 +230,14 @@
         }
 
         @media(max-width:768px) {
-            .menu-toggle { display: block; }
-            nav { flex-wrap: wrap; }
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
             nav ul {
                 width: 100%;
                 flex-direction: column;
@@ -188,8 +246,15 @@
                 margin-top: 10px;
                 padding: 10px 0;
             }
-            nav ul li { text-align: center; padding: 10px 0; }
-            nav ul.active { display: flex; }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -205,18 +270,22 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="certification.html">Certifications</a></li>
-            <li><a href="exports.html">Export</a></li>
+            <li><a href="exports.html" class="active">Export</a></li>
         </ul>
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-in">
         <h1>Export & Logistics</h1>
+        <p>Reliable global delivery with complete documentation and regulatory support.</p>
+        <a href="index.html#contact">
+            <button class="btn btn-primary">Start Export Inquiry</button>
+        </a>
     </section>
 
     <!-- EXPORT SECTION -->
-    <section class="export">
-        <div class="export-container">
+    <section class="export fade-in">
+        <div class="export-container fade-in">
 
             <!-- LEFT TEXT -->
             <div class="export-text">
@@ -269,7 +338,7 @@
     </section>
 
     <!-- MARKETS -->
-    <section class="markets">
+    <section class="markets fade-in">
         <h2>Our Export Markets</h2>
 
         <div class="market-list">
@@ -291,6 +360,22 @@
         function toggleMenu() {
             document.getElementById("nav-links").classList.toggle("active");
         }
+    </script>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll(".fade-in").forEach(el => {
+            observer.observe(el);
+        });
     </script>
 
 </body>
