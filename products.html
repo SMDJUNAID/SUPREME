@@ -31,11 +31,23 @@
 
         /* NAVBAR */
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             background: var(--primary);
             color: white;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 15px 8%;
+        }
+
+        nav a.active {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 3px;
+            font-weight: 600;
+            opacity: 1;
         }
 
         nav ul {
@@ -55,6 +67,16 @@
             color: white;
             text-align: center;
             padding: 50px 20px;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .btn {
+            margin-top: 20px;
         }
 
         /* SECTION */
@@ -113,6 +135,16 @@
             font-size: 0.9rem;
         }
 
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(59, 178, 115, 0.3);
+        }
+
         /* FOOTER */
         footer {
             background: var(--primary);
@@ -121,13 +153,25 @@
             padding: 15px;
         }
 
+        /* SCROLL ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* MOBILE */
         @media(max-width:768px) {
             section {
                 padding: 40px 20px;
             }
         }
-    
+
         /* MOBILE MENU */
         .menu-toggle {
             display: none;
@@ -137,8 +181,14 @@
         }
 
         @media(max-width:768px) {
-            .menu-toggle { display: block; }
-            nav { flex-wrap: wrap; }
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
             nav ul {
                 width: 100%;
                 flex-direction: column;
@@ -147,8 +197,15 @@
                 margin-top: 10px;
                 padding: 10px 0;
             }
-            nav ul li { text-align: center; padding: 10px 0; }
-            nav ul.active { display: flex; }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -162,23 +219,26 @@
         <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
             <li><a href="certification.html">Certifications</a></li>
             <li><a href="exports.html">Export</a></li>
         </ul>
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-in">
         <h1>Our Product Range</h1>
-        <p>High-quality generic medicines sourced from WHO-GMP certified manufacturers in India</p>
+        <p>Explore a wide portfolio of WHO-GMP certified pharmaceutical products.</p>
+        <a href="index.html#contact">
+            <button class="btn btn-primary">Request a Quote</button>
+        </a>
     </section>
 
     <!-- PRODUCTS -->
-    <section>
+    <section class="fade-in">
         <h2 class="section-title">Core Export Categories</h2>
 
-        <div class="grid">
+        <div class="grid fade-in">
 
             <!-- Tablets -->
             <div class="category">
@@ -190,7 +250,7 @@
                     <li>Atorvastatin</li>
                     <li>Omeprazole</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Tablets & Capsules')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Tablets & Capsules')">Request Quote</button>
             </div>
 
             <!-- Antibiotics -->
@@ -203,7 +263,7 @@
                     <li>Ciprofloxacin</li>
                     <li>Doxycycline</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Antibiotics')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Antibiotics')">Request Quote</button>
             </div>
 
             <!-- Injectables -->
@@ -215,7 +275,7 @@
                     <li>Vitamin B Complex</li>
                     <li>Ondansetron</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Injectables')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Injectables')">Request Quote</button>
             </div>
 
             <!-- OTC -->
@@ -227,7 +287,7 @@
                     <li>Antacids</li>
                     <li>Cough Syrups</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('OTC Products')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('OTC Products')">Request Quote</button>
             </div>
 
             <!-- Oncology -->
@@ -238,7 +298,7 @@
                     <li>Imatinib</li>
                     <li>Paclitaxel</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Oncology')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Oncology')">Request Quote</button>
             </div>
 
             <!-- Anti-Malarial -->
@@ -249,7 +309,7 @@
                     <li>Lumefantrine</li>
                     <li>Chloroquine</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Anti-Malarial')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Anti-Malarial')">Request Quote</button>
             </div>
 
             <div class="category">
@@ -260,7 +320,7 @@
                     <li>Glimepiride</li>
                     <li>Insulin (basic range)</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Anti-Diabetic')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Anti-Diabetic')">Request Quote</button>
             </div>
 
             <div class="category">
@@ -271,7 +331,7 @@
                     <li>Atenolol</li>
                     <li>Enalapril</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Cardiovascular')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Cardiovascular')">Request Quote</button>
             </div>
 
             <div class="category">
@@ -282,7 +342,7 @@
                     <li>Diclofenac</li>
                     <li>Tramadol</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Pain Management')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Pain Management')">Request Quote</button>
             </div>
             <div class="category">
                 <h3>Gastrointestinal</h3>
@@ -292,7 +352,7 @@
                     <li>Domperidone</li>
                     <li>Loperamide</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Gastrointestinal')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Gastrointestinal')">Request Quote</button>
             </div>
 
             <div class="category">
@@ -302,7 +362,7 @@
                     <li>Loratadine</li>
                     <li>Chlorpheniramine</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Anti-Allergic')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Anti-Allergic')">Request Quote</button>
             </div>
 
             <div class="category">
@@ -313,7 +373,7 @@
                     <li>Budesonide</li>
                     <li>Ambroxol Syrup</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Respiratory')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Respiratory')">Request Quote</button>
             </div>
 
             <div class="category">
@@ -324,7 +384,7 @@
                     <li>Calcium Tablets</li>
                     <li>Iron + Folic Acid</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Vitamins & Supplements')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Vitamins & Supplements')">Request Quote</button>
             </div>
 
             <div class="category">
@@ -334,7 +394,7 @@
                     <li>Iron Tablets</li>
                     <li>Oral Contraceptives</li>
                 </ul>
-                <button class="btn" onclick="sendProduct('Women Health')">Request Quote</button>
+                <button class="btn btn-primary" onclick="sendProduct('Women Health')">Request Quote</button>
             </div>
         </div>
     </section>
@@ -358,6 +418,22 @@
         function toggleMenu() {
             document.getElementById("nav-links").classList.toggle("active");
         }
+    </script>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll(".fade-in").forEach(el => {
+            observer.observe(el);
+        });
     </script>
 
 </body>

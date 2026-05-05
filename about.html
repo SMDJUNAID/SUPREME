@@ -34,6 +34,10 @@
 
         /* NAVBAR */
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             background: var(--primary);
             color: white;
             display: flex;
@@ -53,6 +57,13 @@
             text-decoration: none;
         }
 
+        nav a.active {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 3px;
+            font-weight: 600;
+            opacity: 1;
+        }
+
         /* HERO */
         .hero {
             background: var(--primary);
@@ -61,8 +72,37 @@
             padding: 50px 20px;
         }
 
+        .hero p {
+            margin-top: 10px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .btn {
+            margin-top: 20px;
+        }
+
         .hero h1 {
             font-size: 2rem;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            margin-top: 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(59, 178, 115, 0.3);
         }
 
         /* ABOUT SECTION */
@@ -123,6 +163,18 @@
             margin-top: auto;
         }
 
+        /* SCROLL ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* MOBILE */
         @media(max-width:768px) {
             .about-container {
@@ -130,7 +182,7 @@
                 text-align: center;
             }
         }
-    
+
         /* MOBILE MENU */
         .menu-toggle {
             display: none;
@@ -140,8 +192,14 @@
         }
 
         @media(max-width:768px) {
-            .menu-toggle { display: block; }
-            nav { flex-wrap: wrap; }
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
             nav ul {
                 width: 100%;
                 flex-direction: column;
@@ -150,8 +208,15 @@
                 margin-top: 10px;
                 padding: 10px 0;
             }
-            nav ul li { text-align: center; padding: 10px 0; }
-            nav ul.active { display: flex; }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
         }
     </style>
 </head>
@@ -164,7 +229,7 @@
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="certification.html">Certifications</a></li>
             <li><a href="exports.html">Export</a></li>
@@ -172,43 +237,47 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-in">
         <h1>About Supreme Medical Agency</h1>
+        <p>Your trusted partner for exporting high-quality generic medicines worldwide.</p>
+        <a href="products.html">
+            <button class="btn btn-primary">View Our Products</button>
+        </a>
     </section>
 
     <!-- ABOUT -->
-    <section class="about">
-        <div class="about-container">
+    <section class="about fade-in">
+        <div class="about-container fade-in">
 
             <!-- LEFT TEXT -->
-            <div class="about-text">
-    <h3>Trusted Global Pharmaceutical Export Partner</h3>
+            <div class="about-text fade-in">
+                <h3>Trusted Global Pharmaceutical Export Partner</h3>
 
-    <p>
-        Supreme Medical Agency is a reliable pharmaceutical export company based in India,
-        focused on delivering high-quality generic medicines worldwide.
-    </p>
+                <p>
+                    Supreme Medical Agency is a reliable pharmaceutical export company based in India,
+                    focused on delivering high-quality generic medicines worldwide.
+                </p>
 
-    <p>
-        We work with WHO-GMP certified manufacturers and ensure strict quality control,
-        competitive pricing, and timely delivery.
-    </p>
+                <p>
+                    We work with WHO-GMP certified manufacturers and ensure strict quality control,
+                    competitive pricing, and timely delivery.
+                </p>
 
-    <p>
-        Our key markets include Africa, Southeast Asia, Middle East, and Latin America.
-    </p>
+                <p>
+                    Our key markets include Africa, Southeast Asia, Middle East, and Latin America.
+                </p>
 
-    <p>
-        With a strong logistics network, we ensure safe and efficient international
-        shipping, meeting all regulatory and compliance requirements.
-    </p>
+                <p>
+                    With a strong logistics network, we ensure safe and efficient international
+                    shipping, meeting all regulatory and compliance requirements.
+                </p>
 
-    
-  
-</div>
+
+
+            </div>
 
             <!-- RIGHT STATS -->
-            <div class="about-stats">
+            <div class="about-stats fade-in">
                 <div class="stat-card">
                     <h3>10+</h3>
                     <p>Countries Served</p>
@@ -243,6 +312,22 @@
         function toggleMenu() {
             document.getElementById("nav-links").classList.toggle("active");
         }
+    </script>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll(".fade-in").forEach(el => {
+            observer.observe(el);
+        });
     </script>
 
 </body>

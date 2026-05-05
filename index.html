@@ -61,6 +61,13 @@
             opacity: 0.9;
         }
 
+        nav a.active {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 3px;
+            font-weight: 600;
+            opacity: 1;
+        }
+
         nav a:hover {
             opacity: 1;
         }
@@ -105,6 +112,11 @@
         .btn-primary {
             background: var(--accent);
             color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(59, 178, 115, 0.3);
         }
 
         .btn-outline {
@@ -287,6 +299,18 @@
             border-radius: 5px;
         }
 
+        /* SCROLL ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* MOBILE */
         @media(max-width:768px) {
 
@@ -331,32 +355,31 @@
         <h2>Supreme Medical</h2>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul id="nav-links">
-            <li><a href="#">Home</a></li>
+            <li><a href="#" class="active">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="certification.html">Certifications</a></li>
             <li><a href="exports.html">Export & Logistics</a></li>
-            <!-- <li><a href="#" class="download">Download Catalogue</a></li> -->
         </ul>
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero fade-in">
         <h1>Reliable Global Supplier of High-Quality Generic Medicines from India</h1>
         <div>
             <button class="btn btn-primary" onclick="openModal()">
                 Request a Quote
             </button>
             <a href="products.html">
-  <button class="btn btn-outline">View Products</button>
-</a>
+                <button class="btn btn-outline">View Products</button>
+            </a>
         </div>
     </section>
 
     <!-- TRUST -->
-    <section>
+    <section class="fade-in">
         <h2 class="section-title">Certifications & Trust</h2>
-        <div class="grid">
+        <div class="grid fade-in">
             <div class="card trust-badge">IEC Certified</div>
             <div class="card trust-badge">RCMC Registered</div>
             <div class="card trust-badge">WHO-GMP Suppliers</div>
@@ -365,7 +388,7 @@
     </section>
 
     <!-- PRODUCTS -->
-    <section>
+    <section class="fade-in">
         <h2 class="section-title">Product Categories</h2>
         <div class="grid">
             <div class="product-card">Tablets & Capsules</div>
@@ -377,9 +400,9 @@
     </section>
 
     <!-- WHY -->
-    <section>
+    <section class="fade-in">
         <h2 class="section-title">Why Choose Us</h2>
-        <div class="why">
+        <div class="why fade-in">
             <div class="card"><span class="check">✔</span>Competitive Pricing</div>
             <div class="card"><span class="check">✔</span>Quality Assurance</div>
             <div class="card"><span class="check">✔</span>Global Expertise</div>
@@ -388,7 +411,7 @@
     </section>
 
     <!-- GLOBAL -->
-    <section>
+    <section class="fade-in">
         <h2 class="section-title">Global Reach</h2>
         <div class="grid">
             <div class="card">Africa</div>
@@ -399,7 +422,7 @@
     </section>
 
     <!-- FORM -->
-    <section>
+    <section class="fade-in fade-in">
         <h2 class="section-title">Request a Quote</h2>
         <form onsubmit="sendFormToWhatsApp(event)">
             <input type="text" id="f_name" placeholder="Full Name" required>
@@ -436,7 +459,6 @@
                 <input type="text" id="name" placeholder="Full Name" required>
                 <input type="text" id="country" placeholder="Country" required>
                 <input type="text" id="product" placeholder="Product" required>
-                <input type="text" id="quantity" placeholder="Quantity" required>
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="tel" id="phone" placeholder="WhatsApp Number" required>
 
@@ -477,7 +499,6 @@
 Name: ${name.value}
 Country: ${country.value}
 Product: ${product.value}
-Quantity: ${quantity.value}
 Email: ${email.value}
 WhatsApp: ${phone.value}`;
 
@@ -511,6 +532,22 @@ WhatsApp: ${phone}`;
 
             window.open(url, "_blank");
         }
+    </script>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll(".fade-in").forEach(el => {
+            observer.observe(el);
+        });
     </script>
 
 </body>
