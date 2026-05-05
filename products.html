@@ -127,6 +127,29 @@
                 padding: 40px 20px;
             }
         }
+    
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media(max-width:768px) {
+            .menu-toggle { display: block; }
+            nav { flex-wrap: wrap; }
+            nav ul {
+                width: 100%;
+                flex-direction: column;
+                display: none;
+                background: var(--primary);
+                margin-top: 10px;
+                padding: 10px 0;
+            }
+            nav ul li { text-align: center; padding: 10px 0; }
+            nav ul.active { display: flex; }
+        }
     </style>
 </head>
 
@@ -135,7 +158,8 @@
     <!-- NAVBAR -->
     <nav>
         <h2>Supreme Medical</h2>
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="products.html">Products</a></li>
@@ -324,8 +348,15 @@
     <script>
         function sendProduct(product) {
             let message = `Hello, I am interested in ${product}. Please share quotation and details.`;
-            let url = "https://wa.me/1234567890?text=" + encodeURIComponent(message);
+            let url = "https://wa.me/9392868579?text=" + encodeURIComponent(message);
             window.open(url, "_blank");
+        }
+    </script>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("active");
         }
     </script>
 
