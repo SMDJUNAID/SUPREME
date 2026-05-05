@@ -168,6 +168,29 @@
                 list-style: none;
             }
         }
+    
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media(max-width:768px) {
+            .menu-toggle { display: block; }
+            nav { flex-wrap: wrap; }
+            nav ul {
+                width: 100%;
+                flex-direction: column;
+                display: none;
+                background: var(--primary);
+                margin-top: 10px;
+                padding: 10px 0;
+            }
+            nav ul li { text-align: center; padding: 10px 0; }
+            nav ul.active { display: flex; }
+        }
     </style>
 </head>
 
@@ -176,7 +199,8 @@
     <!-- NAVBAR -->
     <nav>
         <h2>Supreme Medical</h2>
-        <ul>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="products.html">Products</a></li>
@@ -261,6 +285,13 @@
     <footer>
         <p>© 2026 Supreme Medical Agency</p>
     </footer>
+
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-links").classList.toggle("active");
+        }
+    </script>
 
 </body>
 
