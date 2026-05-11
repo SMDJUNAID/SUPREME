@@ -7,8 +7,11 @@
     <title>Products - Supreme Medical Agency</title>
     <meta name="description"
         content="Explore Supreme Medical Agency’s pharmaceutical product range including tablets, capsules, injectables, antibiotics, oncology, OTC products, and WHO-GMP certified medicines for export.">
+    <link rel="icon" type="image/ico" href="assets/favicon.ico">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 
     <style>
         :root {
@@ -155,6 +158,32 @@
             padding: 15px;
         }
 
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: #3bb273;
+            transform: translateY(-3px);
+        }
+
         /* SCROLL ANIMATION */
         .fade-in {
             opacity: 0;
@@ -180,6 +209,40 @@
             font-size: 24px;
             cursor: pointer;
             color: white;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 25px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            float: right;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .modal input {
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
 
         @media(max-width:768px) {
@@ -231,9 +294,9 @@
     <section class="hero fade-in">
         <h1>Our Product Range</h1>
         <p>Explore a wide portfolio of WHO-GMP certified pharmaceutical products.</p>
-        <a href="index.html#contact">
-            <button class="btn btn-primary">Request a Quote</button>
-        </a>
+        <button class="btn btn-primary" onclick="openModal()">
+            Request a Quote
+        </button>
     </section>
 
     <!-- PRODUCTS -->
@@ -403,18 +466,101 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Supreme Medical Agency</p>
+        <p>© 2026 Supreme Medical Agency | All Rights Reserved</p>
+
+        <div class="social-links">
+
+            <a href="mailto:info@suprememedicalagency.com" target="_blank">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://linkedin.com/company/yourcompany" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://x.com/yourprofile" target="_blank">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+
+
+        </div>
     </footer>
+
+    <!-- QUOTE MODAL -->
+    <div id="quoteModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Request a Quote</h3>
+
+            <form onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="country" placeholder="Country" required>
+                <input type="text" id="product" placeholder="Product" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="phone" placeholder="WhatsApp Number" required>
+
+                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            </form>
+        </div>
+    </div>
 
     <!-- SCRIPT -->
     <script>
+        let selectedProduct = "";
+
+        function openModal(product = "") {
+            selectedProduct = product;
+
+            document.getElementById("quoteModal").style.display = "flex";
+
+            if (product) {
+                document.getElementById("product").value = product;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById("quoteModal").style.display = "none";
+        }
+
+        window.onclick = function (e) {
+            let modal = document.getElementById("quoteModal");
+
+            if (e.target === modal) {
+                closeModal();
+            }
+        }
+
         function sendProduct(product) {
-            let message = `Hello, I am interested in ${product}. Please share quotation and details.`;
+            openModal(product);
+        }
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let country = document.getElementById("country").value;
+            let product = document.getElementById("product").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+
+            let message = `Hello, I would like to request a quotation:
+
+Name: ${name}
+Country: ${country}
+Product: ${product}
+Email: ${email}
+WhatsApp: ${phone}`;
+
             let url = "https://wa.me/9392868579?text=" + encodeURIComponent(message);
+
             window.open(url, "_blank");
+
+            closeModal();
         }
     </script>
-
 
     <script>
         function toggleMenu() {
