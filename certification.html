@@ -187,6 +187,35 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            /* Equal width & height */
+            height: 60px;
+            background: #3bb273;
+            /* Light Green (action color) */
+            border-radius: 50%;
+            /* Makes perfect circle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+        }
+
+        /* Icon size control */
+        .whatsapp svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Hover effect */
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
 
 
         /* MOBILE MENU */
@@ -238,7 +267,7 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="certification.html" class="active">Certifications</a></li>
-            <li><a href="exports.html">Export</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
     </nav>
 
@@ -306,22 +335,29 @@
             <a href="mailto:info@suprememedicalagency.com" target="_blank">
                 <i class="fas fa-envelope"></i>
             </a>
-
             <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
 
-            <a href="https://linkedin.com/company/yourcompany" target="_blank">
+            <a href="https://www.linkedin.com/in/supreme-medical-agency-588169406" target="_blank">
                 <i class="fab fa-linkedin-in"></i>
             </a>
 
-            <a href="https://x.com/yourprofile" target="_blank">
+            <a href="https://x.com/suprememedical" target="_blank">
                 <i class="fab fa-x-twitter"></i>
             </a>
 
 
         </div>
     </footer>
+
+     <!-- WHATSAPP -->
+    <a href="https://wa.me/9392868579" class="whatsapp" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
+            <path
+                d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z" />
+        </svg>
+    </a>
 
 
     <script>
