@@ -1,108 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Supreme Medical Agency</title>
-    <meta name="description" content="Contact Supreme Medical Agency for pharmaceutical export inquiries. Reach us via WhatsApp, email, or visit our office in Kurnool, Andhra Pradesh, India.">
+    <meta name="description"
+        content="Contact Supreme Medical Agency for pharmaceutical export inquiries. Reach us via WhatsApp, email, or visit our office in Kurnool, Andhra Pradesh, India.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        :root { --primary: #0b3d91; --accent: #3bb273; --white: #ffffff; --text: #1f2937; --border: #e5e7eb; --light-bg: #f9fafb; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: white; color: var(--text); display: flex; flex-direction: column; min-height: 100vh; }
+        :root {
+            --primary: #0b3d91;
+            --accent: #3bb273;
+            --white: #ffffff;
+            --text: #1f2937;
+            --border: #e5e7eb;
+            --light-bg: #f9fafb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: white;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
         /* NAVBAR */
-        nav { background: var(--primary); color: white; display: flex; justify-content: space-between; align-items: center; padding: 12px 8%; position: sticky; top: 0; z-index: 1000; }
-        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .nav-brand img { height: 44px; width: 44px; object-fit: contain; border-radius: 6px; }
-        .nav-brand span { color: white; font-size: 1.1rem; font-weight: 700; }
-        nav ul { display: flex; gap: 25px; list-style: none; }
-        nav ul a { color: white; text-decoration: none; font-weight: 500; opacity: 0.85; transition: all 0.2s; padding-bottom: 3px; }
-        nav ul a:hover { opacity: 1; border-bottom: 2px solid rgba(255,255,255,0.4); }
-        nav ul a.active { border-bottom: 2px solid var(--accent); font-weight: 600; opacity: 1; }
-        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: white; }
+        nav {
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            height: 44px;
+            width: 44px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .nav-brand span {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.85;
+            transition: all 0.2s;
+            padding-bottom: 3px;
+        }
+
+        nav ul a:hover {
+            opacity: 1;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        nav ul a.active {
+            border-bottom: 2px solid var(--accent);
+            font-weight: 600;
+            opacity: 1;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
 
         /* HERO */
-        .hero { background: var(--primary); color: white; text-align: center; padding: 60px 20px; position: relative; overflow: hidden; }
-        .hero-bg { position: absolute; inset: 0; pointer-events: none; }
-        .hero-bg circle { fill: rgba(255,255,255,0.04); }
-        .hero-content { position: relative; z-index: 1; }
-        .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
-        .hero p { opacity: 0.85; font-size: 1rem; }
+        .hero {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .hero-bg circle {
+            fill: rgba(255, 255, 255, 0.04);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            opacity: 0.85;
+            font-size: 1rem;
+        }
 
         /* QUICK STRIP */
-        .quick-strip { background: var(--primary); padding: 0 8% 28px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .quick-item { display: flex; align-items: center; gap: 12px; color: white; text-decoration: none; max-width: 280px; }
-        .quick-item-icon { width: 44px; height: 44px; background: rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .quick-item-icon svg { width: 20px; height: 20px; fill: white; }
-        .quick-item-text span { display: block; font-size: 0.73rem; opacity: 0.75; text-transform: uppercase; letter-spacing: 0.05em; }
-        .quick-item-text strong { font-size: 0.93rem; }
-        .quick-divider { width: 1px; background: rgba(255,255,255,0.2); align-self: stretch; }
+        .quick-strip {
+            background: var(--primary);
+            padding: 0 8% 28px;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quick-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            text-decoration: none;
+            max-width: 280px;
+        }
+
+        .quick-item-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .quick-item-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .quick-item-text span {
+            display: block;
+            font-size: 0.73rem;
+            opacity: 0.75;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .quick-item-text strong {
+            font-size: 0.93rem;
+        }
+
+        .quick-divider {
+            width: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            align-self: stretch;
+        }
 
         /* MAIN CONTACT SECTION */
-        .contact-section { padding: 65px 8%; flex: 1; }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; align-items: start; }
+        .contact-section {
+            padding: 65px 8%;
+            flex: 1;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: start;
+        }
 
         /* LEFT INFO */
-        .contact-info h2 { color: var(--primary); font-size: 1.4rem; margin-bottom: 25px; font-weight: 700; }
-        .info-block { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 26px; }
-        .info-icon { width: 44px; height: 44px; background: var(--primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .info-icon svg { width: 20px; height: 20px; fill: white; }
-        .info-text h4 { color: var(--primary); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
-        .info-text p, .info-text a { color: var(--text); font-size: 0.93rem; line-height: 1.55; text-decoration: none; }
-        .info-text a:hover { color: var(--accent); }
+        .contact-info h2 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .info-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 26px;
+        }
+
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .info-text h4 {
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+
+        .info-text p,
+        .info-text a {
+            color: var(--text);
+            font-size: 0.93rem;
+            line-height: 1.55;
+            text-decoration: none;
+        }
+
+        .info-text a:hover {
+            color: var(--accent);
+        }
 
         /* GST + HOURS */
-        .gst-badge { margin-top: 8px; background: var(--light-bg); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 8px; padding: 14px 18px; }
-        .gst-badge p { font-size: 0.78rem; color: #6b7280; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
-        .gst-badge span { font-size: 1rem; font-weight: 700; color: var(--primary); letter-spacing: 0.04em; }
-        .hours-card { margin-top: 14px; background: var(--light-bg); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 14px 18px; }
-        .hours-card p { font-size: 0.78rem; color: #6b7280; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
-        .hours-card span { font-size: 0.93rem; font-weight: 600; color: var(--text); }
+        .gst-badge {
+            margin-top: 8px;
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+
+        .gst-badge p {
+            font-size: 0.78rem;
+            color: #6b7280;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .gst-badge span {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.04em;
+        }
+
+        .hours-card {
+            margin-top: 14px;
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 14px 18px;
+        }
+
+        .hours-card p {
+            font-size: 0.78rem;
+            color: #6b7280;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .hours-card span {
+            font-size: 0.93rem;
+            font-weight: 600;
+            color: var(--text);
+        }
 
         /* MAP */
-        .map-wrap { margin-top: 22px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
-        .map-wrap iframe { width: 100%; height: 200px; border: none; display: block; }
+        .map-wrap {
+            margin-top: 22px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            display: block;
+        }
 
         /* RIGHT FORM */
-        .contact-form-wrap { background: var(--light-bg); border: 1px solid var(--border); border-radius: 12px; padding: 35px 30px; }
-        .contact-form-wrap h2 { color: var(--primary); font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
-        .contact-form-wrap > p { color: #6b7280; font-size: 0.9rem; margin-bottom: 22px; }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 0.83rem; font-weight: 600; color: var(--text); margin-bottom: 5px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 11px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; background: white; color: var(--text); transition: border-color 0.2s; outline: none; }
-        .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); }
-        .form-group textarea { resize: vertical; min-height: 100px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        .submit-btn { width: 100%; background: var(--accent); color: white; font-weight: 600; border: none; padding: 14px 20px; border-radius: 30px; font-size: 1rem; cursor: pointer; box-shadow: 0 6px 14px rgba(59,178,115,0.3); transition: all 0.3s; margin-top: 8px; }
-        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(59,178,115,0.4); }
-        .success-msg { display: none; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 14px 18px; color: #065f46; font-weight: 600; font-size: 0.9rem; margin-top: 12px; text-align: center; }
+        .contact-form-wrap {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px 30px;
+        }
+
+        .contact-form-wrap h2 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .contact-form-wrap>p {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background: white;
+            color: var(--text);
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(59, 178, 115, 0.3);
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 178, 115, 0.4);
+        }
+
+        .success-msg {
+            display: none;
+            background: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            padding: 14px 18px;
+            color: #065f46;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            text-align: center;
+        }
 
         /* FOOTER */
-        footer { background: var(--primary); color: white; text-align: center; padding: 22px; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
-        .social-links { margin-top: 15px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
-        .social-links a { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s ease; font-size: 1rem; }
-        .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
 
         /* WHATSAPP */
-        .whatsapp { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: 0.3s; z-index: 999; }
-        .whatsapp:hover { transform: scale(1.1); }
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: 0.3s;
+            z-index: 999;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
 
         /* MOBILE */
         @media(max-width:768px) {
-            .menu-toggle { display: block; }
-            nav { flex-wrap: wrap; }
-            nav ul { width: 100%; flex-direction: column; display: none; background: var(--primary); margin-top: 10px; padding: 10px 0; }
-            nav ul li { text-align: center; padding: 10px 0; }
-            nav ul.active { display: flex; }
-            .contact-grid { grid-template-columns: 1fr; gap: 30px; }
-            .form-row { grid-template-columns: 1fr; }
-            .quick-divider { display: none; }
-            .quick-strip { flex-direction: column; align-items: center; gap: 20px; }
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                width: 100%;
+                flex-direction: column;
+                display: none;
+                background: var(--primary);
+                margin-top: 10px;
+                padding: 10px 0;
+            }
+
+            nav ul li {
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-divider {
+                display: none;
+            }
+
+            /* FIX ALIGNMENT */
+            .quick-strip {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 18px;
+                padding: 0 20px 24px;
+            }
+
+            .quick-item {
+                width: 100%;
+                max-width: 100%;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .quick-item-text {
+                flex: 1;
+            }
+
+            .quick-item-text strong {
+                display: block;
+                word-break: break-word;
+                line-height: 1.4;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -121,8 +561,11 @@
     </nav>
 
     <section class="hero">
-        <svg class="hero-bg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="80" r="160"/><circle cx="1100" cy="250" r="200"/><circle cx="600" cy="30" r="90"/>
+        <svg class="hero-bg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="80" r="160" />
+            <circle cx="1100" cy="250" r="200" />
+            <circle cx="600" cy="30" r="90" />
         </svg>
         <div class="hero-content">
             <h1>Contact Us</h1>
@@ -133,21 +576,30 @@
     <div class="quick-strip">
         <a href="https://wa.me/919392868579" class="quick-item" target="_blank">
             <div class="quick-item-icon">
-                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm7.23 21.371c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z"/></svg>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm7.23 21.371c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z" />
+                </svg>
             </div>
             <div class="quick-item-text"><span>WhatsApp</span><strong>+91 93928 68579</strong></div>
         </a>
         <div class="quick-divider"></div>
         <a href="mailto:info@suprememedicalagency.com" class="quick-item">
             <div class="quick-item-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
             </div>
             <div class="quick-item-text"><span>Email</span><strong>info@suprememedicalagency.com</strong></div>
         </a>
         <div class="quick-divider"></div>
         <div class="quick-item">
             <div class="quick-item-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                </svg>
             </div>
             <div class="quick-item-text"><span>Location</span><strong>Kurnool, Andhra Pradesh, India</strong></div>
         </div>
@@ -161,7 +613,10 @@
                 <h2>Business Information</h2>
 
                 <div class="info-block">
-                    <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg></div>
+                    <div class="info-icon"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                        </svg></div>
                     <div class="info-text">
                         <h4>Office Address</h4>
                         <p>78/8/A/12/2/116/D/1/A, New Vittal Nagar,<br>Kurnool, Andhra Pradesh – 518002, India</p>
@@ -169,7 +624,10 @@
                 </div>
 
                 <div class="info-block">
-                    <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <div class="info-icon"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg></div>
                     <div class="info-text">
                         <h4>Email</h4>
                         <a href="mailto:info@suprememedicalagency.com">info@suprememedicalagency.com</a>
@@ -177,7 +635,10 @@
                 </div>
 
                 <div class="info-block">
-                    <div class="info-icon"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm7.23 21.371c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z"/></svg></div>
+                    <div class="info-icon"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm7.23 21.371c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z" />
+                        </svg></div>
                     <div class="info-text">
                         <h4>WhatsApp</h4>
                         <a href="https://wa.me/919392868579" target="_blank">+91 93928 68579</a>
@@ -185,15 +646,23 @@
                 </div>
 
                 <div class="info-block">
-                    <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.46 1.46 0 0 1 14.38 12.11A1.46 1.46 0 0 1 15.84 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg></div>
+                    <div class="info-icon"><svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.46 1.46 0 0 1 14.38 12.11A1.46 1.46 0 0 1 15.84 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z" />
+                        </svg></div>
                     <div class="info-text">
                         <h4>LinkedIn</h4>
-                        <a href="https://www.linkedin.com/in/supreme-medical-agency-588169406" target="_blank">Supreme Medical Agency</a>
+                        <a href="https://www.linkedin.com/in/supreme-medical-agency-588169406" target="_blank">Supreme
+                            Medical Agency</a>
                     </div>
                 </div>
 
-                <div class="gst-badge"><p>GSTIN</p><span>37CSDPS3910E4ZQ</span></div>
-                <div class="hours-card"><p>Business Hours</p><span>Monday – Saturday &nbsp;|&nbsp; 9:00 AM – 6:00 PM IST</span></div>
+                <div class="gst-badge">
+                    <p>GSTIN</p><span>37CSDPS3910E4ZQ</span>
+                </div>
+                <div class="hours-card">
+                    <p>Business Hours</p><span>Monday – Saturday &nbsp;|&nbsp; 9:00 AM – 6:00 PM IST</span>
+                </div>
 
                 <!-- GOOGLE MAP -->
                 <!-- <div class="map-wrap">
@@ -210,19 +679,27 @@
                 <p>Fill in the details below and we'll respond within 24 hours.</p>
 
                 <div class="form-row">
-                    <div class="form-group"><label>Full Name *</label><input type="text" id="c_name" placeholder="Your name" required></div>
-                    <div class="form-group"><label>Country *</label><input type="text" id="c_country" placeholder="Your country" required></div>
+                    <div class="form-group"><label>Full Name *</label><input type="text" id="c_name"
+                            placeholder="Your name" required></div>
+                    <div class="form-group"><label>Country *</label><input type="text" id="c_country"
+                            placeholder="Your country" required></div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group"><label>Email Address *</label><input type="email" id="c_email" placeholder="your@email.com" required></div>
-                    <div class="form-group"><label>WhatsApp Number *</label><input type="tel" id="c_phone" placeholder="+91 00000 00000" required></div>
+                    <div class="form-group"><label>Email Address *</label><input type="email" id="c_email"
+                            placeholder="your@email.com" required></div>
+                    <div class="form-group"><label>WhatsApp Number *</label><input type="tel" id="c_phone"
+                            placeholder="+91 00000 00000" required></div>
                 </div>
-                <div class="form-group"><label>Product / Category Required *</label><input type="text" id="c_product" placeholder="e.g. Antibiotics, Paracetamol 500mg" required></div>
-                <div class="form-group"><label>Quantity Required</label><input type="text" id="c_qty" placeholder="e.g. 10,000 strips per month"></div>
-                <div class="form-group"><label>Message</label><textarea id="c_message" placeholder="Any additional details, special requirements, or questions..."></textarea></div>
+                <div class="form-group"><label>Product / Category Required *</label><input type="text" id="c_product"
+                        placeholder="e.g. Antibiotics, Paracetamol 500mg" required></div>
+                <div class="form-group"><label>Quantity Required</label><input type="text" id="c_qty"
+                        placeholder="e.g. 10,000 strips per month"></div>
+                <div class="form-group"><label>Message</label><textarea id="c_message"
+                        placeholder="Any additional details, special requirements, or questions..."></textarea></div>
 
                 <button class="submit-btn" onclick="sendContactToWhatsApp()">Send Inquiry via WhatsApp →</button>
-                <div class="success-msg" id="successMsg">✅ Opening WhatsApp with your inquiry. We'll respond shortly!</div>
+                <div class="success-msg" id="successMsg">✅ Opening WhatsApp with your inquiry. We'll respond shortly!
+                </div>
             </div>
 
         </div>
@@ -232,14 +709,19 @@
         <p>© 2026 Supreme Medical Agency | All Rights Reserved</p>
         <div class="social-links">
             <a href="mailto:info@suprememedicalagency.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/supreme-medical-agency-588169406" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/supreme-medical-agency-588169406" target="_blank"><i
+                    class="fab fa-linkedin-in"></i></a>
             <a href="https://x.com/suprememedical" target="_blank"><i class="fab fa-x-twitter"></i></a>
         </div>
     </footer>
 
     <a href="https://wa.me/9392868579" class="whatsapp" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white">
+            <path
+                d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z" />
+        </svg>
     </a>
 
     <script>
@@ -260,4 +742,5 @@
         }
     </script>
 </body>
+
 </html>
