@@ -1,315 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Supreme Medical Agency</title>
-    <meta name="description"
-        content="Explore Supreme Medical Agency’s pharmaceutical product range including tablets, capsules, injectables, antibiotics, oncology, OTC products, and WHO-GMP certified medicines for export.">
+    <meta name="description" content="Explore Supreme Medical Agency's pharmaceutical product range including tablets, capsules, injectables, antibiotics, oncology, OTC products, and WHO-GMP certified medicines for export.">
     <link rel="icon" type="image/ico" href="assets/favicon.ico">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
     <style>
-        :root {
-            --primary: #0b3d91;
-            --accent: #3bb273;
-            --text: #1f2937;
-            --border: #e5e7eb;
-        }
-
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background: white;
-            color: var(--text);
-        }
+        :root { --primary: #0b3d91; --accent: #3bb273; --text: #1f2937; --border: #e5e7eb; --light-bg: #f9fafb; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: white; color: var(--text); display: flex; flex-direction: column; min-height: 100vh; }
 
         /* NAVBAR */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            background: var(--primary);
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 8%;
-        }
-
-        nav a.active {
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 3px;
-            font-weight: 600;
-            opacity: 1;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
+        nav { position: sticky; top: 0; z-index: 1000; background: var(--primary); color: white; display: flex; justify-content: space-between; align-items: center; padding: 12px 8%; }
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-brand img { height: 44px; width: 44px; object-fit: contain; border-radius: 6px; }
+        .nav-brand span { color: white; font-size: 1.1rem; font-weight: 700; }
+        nav ul { display: flex; gap: 25px; list-style: none; }
+        nav ul a { color: white; text-decoration: none; font-weight: 500; opacity: 0.85; transition: all 0.2s; padding-bottom: 3px; }
+        nav ul a:hover { opacity: 1; border-bottom: 2px solid rgba(255,255,255,0.4); }
+        nav ul a.active { border-bottom: 2px solid var(--accent); font-weight: 600; opacity: 1; }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: white; }
 
         /* HERO */
-        .hero {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
+        .hero { background: var(--primary); color: white; text-align: center; padding: 60px 20px; position: relative; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; pointer-events: none; }
+        .hero-bg circle { fill: rgba(255,255,255,0.04); }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        .hero p { font-size: 1rem; opacity: 0.88; margin-bottom: 22px; }
+        .btn { padding: 12px 26px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.95rem; transition: all 0.25s; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(59,178,115,0.4); }
 
-        .hero p {
-            margin-top: 10px;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
+        /* FILTER TABS */
+        .filter-bar { padding: 30px 8% 0; }
+        .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .filter-tab { padding: 8px 20px; border-radius: 99px; border: 1px solid var(--border); background: white; color: var(--text); font-size: 0.88rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .filter-tab:hover { border-color: var(--primary); color: var(--primary); }
+        .filter-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
 
-        .hero .btn {
-            margin-top: 20px;
-        }
-
-        /* SECTION */
-        section {
-            padding: 60px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 40px;
-        }
-
-        /* GRID */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-        }
+        /* PRODUCTS SECTION */
+        .products-section { padding: 40px 8% 60px; }
+        .section-title { text-align: center; color: var(--primary); margin-bottom: 30px; font-size: 1.6rem; font-weight: 700; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
 
         /* CATEGORY CARD */
         .category {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 20px;
-            transition: 0.3s;
+            border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px;
+            background: white; transition: 0.3s; display: flex; flex-direction: column;
         }
+        .category:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-4px); border-color: #d1dff7; }
+        .cat-icon { width: 46px; height: 46px; border-radius: 10px; background: #eaf0fb; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .cat-icon i { font-size: 1.3rem; color: var(--primary); }
+        .category h3 { color: var(--primary); font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+        .category ul { list-style: none; margin-bottom: 18px; flex: 1; }
+        .category ul li { font-size: 0.88rem; color: #4b5563; padding: 3px 0; display: flex; align-items: center; gap: 6px; }
+        .category ul li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
 
-        .category:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-        }
+        /* QUOTE BUTTON — outline style */
+        .btn-quote { background: transparent; color: var(--primary); border: 1.5px solid var(--primary); padding: 9px 18px; border-radius: 99px; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; width: 100%; margin-top: auto; }
+        .btn-quote:hover { background: var(--primary); color: white; }
 
-        .category h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .category ul {
-            list-style: none;
-            margin-bottom: 15px;
-        }
-
-        .category li {
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        /* BUTTON */
-        .btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 10px 16px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(59, 178, 115, 0.3);
-        }
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 9999; inset: 0; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+        .modal-content { background: #fff; padding: 30px; width: 90%; max-width: 420px; border-radius: 12px; text-align: center; }
+        .modal-content h3 { color: var(--primary); margin-bottom: 16px; font-size: 1.15rem; }
+        .close { float: right; font-size: 22px; cursor: pointer; color: #666; }
+        .modal input { width: 100%; margin: 7px 0; padding: 11px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; outline: none; }
+        .modal input:focus { border-color: var(--primary); }
+        .modal .btn-primary { width: 100%; margin-top: 10px; padding: 12px; border-radius: 30px; font-size: 1rem; }
 
         /* FOOTER */
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-
-        .social-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: 0.3s ease;
-            font-size: 1rem;
-        }
-
-        .social-links a:hover {
-            background: #3bb273;
-            transform: translateY(-3px);
-        }
-
-        /* SCROLL ANIMATION */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        footer { background: var(--primary); color: white; text-align: center; padding: 22px; margin-top: auto; }
+        .social-links { margin-top: 15px; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+        .social-links a { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: white; transition: 0.3s ease; font-size: 1rem; }
+        .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
 
         /* WHATSAPP */
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 60px;
-            /* Equal width & height */
-            height: 60px;
-            background: #3bb273;
-            /* Light Green (action color) */
-            border-radius: 50%;
-            /* Makes perfect circle */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: 0.3s;
-        }
+        .whatsapp { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: 0.3s; z-index: 999; }
+        .whatsapp:hover { transform: scale(1.1); }
 
-        /* Icon size control */
-        .whatsapp svg {
-            width: 28px;
-            height: 28px;
-        }
-
-        /* Hover effect */
-        .whatsapp:hover {
-            transform: scale(1.1);
-        }
+        /* ANIMATIONS */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .fade-in.show { opacity: 1; transform: translateY(0); }
 
         /* MOBILE */
         @media(max-width:768px) {
-            section {
-                padding: 40px 20px;
-            }
-        }
-
-        /* MOBILE MENU */
-        .menu-toggle {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
-        }
-
-        /* MODAL */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.6);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 25px;
-            width: 90%;
-            max-width: 400px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .close {
-            float: right;
-            font-size: 22px;
-            cursor: pointer;
-        }
-
-        .modal input {
-            width: 100%;
-            margin: 8px 0;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        @media(max-width:768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            nav {
-                flex-wrap: wrap;
-            }
-
-            nav ul {
-                width: 100%;
-                flex-direction: column;
-                display: none;
-                background: var(--primary);
-                margin-top: 10px;
-                padding: 10px 0;
-            }
-
-            nav ul li {
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
+            .menu-toggle { display: block; }
+            nav { flex-wrap: wrap; }
+            nav ul { width: 100%; flex-direction: column; display: none; background: var(--primary); margin-top: 10px; padding: 10px 0; }
+            nav ul li { text-align: center; padding: 10px 0; }
+            nav ul.active { display: flex; }
+            .products-section { padding: 30px 20px 50px; }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
     <nav>
-        <h2>Supreme Medical</h2>
+        <a href="index.html" class="nav-brand">
+            <img src="assets/logo.jpg" alt="Supreme Medical Agency Logo">
+            <span>Supreme Medical</span>
+        </a>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -320,308 +115,195 @@
         </ul>
     </nav>
 
-    <!-- HERO -->
     <section class="hero fade-in">
-        <h1>Our Product Range</h1>
-        <p>Explore a wide portfolio of WHO-GMP certified pharmaceutical products.</p>
-        <button class="btn btn-primary" onclick="openModal()">
-            Request a Quote
-        </button>
-    </section>
-
-    <!-- PRODUCTS -->
-    <section class="fade-in">
-        <h2 class="section-title">Core Export Categories</h2>
-
-        <div class="grid fade-in">
-
-            <!-- Tablets -->
-            <div class="category">
-                <h3>Tablets & Capsules</h3>
-                <ul>
-                    <li>Paracetamol</li>
-                    <li>Metformin</li>
-                    <li>Amlodipine</li>
-                    <li>Atorvastatin</li>
-                    <li>Omeprazole</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Tablets & Capsules')">Request Quote</button>
-            </div>
-
-            <!-- Antibiotics -->
-            <div class="category">
-                <h3>Antibiotics</h3>
-                <ul>
-                    <li>Amoxicillin</li>
-                    <li>Azithromycin</li>
-                    <li>Cefixime</li>
-                    <li>Ciprofloxacin</li>
-                    <li>Doxycycline</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Antibiotics')">Request Quote</button>
-            </div>
-
-            <!-- Injectables -->
-            <div class="category">
-                <h3>Injectables</h3>
-                <ul>
-                    <li>Ceftriaxone</li>
-                    <li>Diclofenac Injection</li>
-                    <li>Vitamin B Complex</li>
-                    <li>Ondansetron</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Injectables')">Request Quote</button>
-            </div>
-
-            <!-- OTC -->
-            <div class="category">
-                <h3>OTC Products</h3>
-                <ul>
-                    <li>ORS Sachets</li>
-                    <li>Multivitamins</li>
-                    <li>Antacids</li>
-                    <li>Cough Syrups</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('OTC Products')">Request Quote</button>
-            </div>
-
-            <!-- Oncology -->
-            <div class="category">
-                <h3>Oncology</h3>
-                <ul>
-                    <li>Capecitabine</li>
-                    <li>Imatinib</li>
-                    <li>Paclitaxel</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Oncology')">Request Quote</button>
-            </div>
-
-            <!-- Anti-Malarial -->
-            <div class="category">
-                <h3>Anti-Malarial</h3>
-                <ul>
-                    <li>Artemether</li>
-                    <li>Lumefantrine</li>
-                    <li>Chloroquine</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Anti-Malarial')">Request Quote</button>
-            </div>
-
-            <div class="category">
-                <h3>Anti-Diabetic</h3>
-                <ul>
-                    <li>Metformin</li>
-                    <li>Glibenclamide</li>
-                    <li>Glimepiride</li>
-                    <li>Insulin (basic range)</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Anti-Diabetic')">Request Quote</button>
-            </div>
-
-            <div class="category">
-                <h3>Cardiovascular</h3>
-                <ul>
-                    <li>Amlodipine</li>
-                    <li>Losartan</li>
-                    <li>Atenolol</li>
-                    <li>Enalapril</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Cardiovascular')">Request Quote</button>
-            </div>
-
-            <div class="category">
-                <h3>Pain Management</h3>
-                <ul>
-                    <li>Paracetamol</li>
-                    <li>Ibuprofen</li>
-                    <li>Diclofenac</li>
-                    <li>Tramadol</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Pain Management')">Request Quote</button>
-            </div>
-            <div class="category">
-                <h3>Gastrointestinal</h3>
-                <ul>
-                    <li>Omeprazole</li>
-                    <li>Pantoprazole</li>
-                    <li>Domperidone</li>
-                    <li>Loperamide</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Gastrointestinal')">Request Quote</button>
-            </div>
-
-            <div class="category">
-                <h3>Anti-Allergic</h3>
-                <ul>
-                    <li>Cetirizine</li>
-                    <li>Loratadine</li>
-                    <li>Chlorpheniramine</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Anti-Allergic')">Request Quote</button>
-            </div>
-
-            <div class="category">
-                <h3>Respiratory</h3>
-                <ul>
-                    <li>Salbutamol</li>
-                    <li>Theophylline</li>
-                    <li>Budesonide</li>
-                    <li>Ambroxol Syrup</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Respiratory')">Request Quote</button>
-            </div>
-
-            <div class="category">
-                <h3>Vitamins & Supplements</h3>
-                <ul>
-                    <li>Vitamin C</li>
-                    <li>Vitamin D3</li>
-                    <li>Calcium Tablets</li>
-                    <li>Iron + Folic Acid</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Vitamins & Supplements')">Request Quote</button>
-            </div>
-
-            <div class="category">
-                <h3>Women’s Health</h3>
-                <ul>
-                    <li>Folic Acid</li>
-                    <li>Iron Tablets</li>
-                    <li>Oral Contraceptives</li>
-                </ul>
-                <button class="btn btn-primary" onclick="sendProduct('Women Health')">Request Quote</button>
-            </div>
+        <svg class="hero-bg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="80" r="160"/><circle cx="1100" cy="250" r="200"/><circle cx="600" cy="30" r="90"/>
+        </svg>
+        <div class="hero-content">
+            <h1>Our Product Range</h1>
+            <p>Explore a wide portfolio of WHO-GMP certified pharmaceutical products.</p>
+            <button class="btn btn-primary" onclick="openModal()">Request a Quote</button>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FILTER TABS -->
+    <div class="filter-bar fade-in">
+        <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterProducts('all', this)">All Categories</button>
+            <button class="filter-tab" onclick="filterProducts('tablet', this)">Tablets &amp; Capsules</button>
+            <button class="filter-tab" onclick="filterProducts('injectable', this)">Injectables</button>
+            <button class="filter-tab" onclick="filterProducts('antibiotic', this)">Antibiotics</button>
+            <button class="filter-tab" onclick="filterProducts('specialty', this)">Specialty</button>
+            <button class="filter-tab" onclick="filterProducts('otc', this)">OTC &amp; Vitamins</button>
+        </div>
+    </div>
+
+    <section class="products-section fade-in">
+        <h2 class="section-title">Core Export Categories</h2>
+        <div class="grid" id="productGrid">
+
+            <div class="category" data-cat="tablet">
+                <div class="cat-icon"><i class="fas fa-pills"></i></div>
+                <h3>Tablets &amp; Capsules</h3>
+                <ul><li>Paracetamol</li><li>Metformin</li><li>Amlodipine</li><li>Atorvastatin</li><li>Omeprazole</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Tablets & Capsules')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="antibiotic">
+                <div class="cat-icon"><i class="fas fa-bacterium"></i></div>
+                <h3>Antibiotics</h3>
+                <ul><li>Amoxicillin</li><li>Azithromycin</li><li>Cefixime</li><li>Ciprofloxacin</li><li>Doxycycline</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Antibiotics')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="injectable">
+                <div class="cat-icon"><i class="fas fa-syringe"></i></div>
+                <h3>Injectables</h3>
+                <ul><li>Ceftriaxone</li><li>Diclofenac Injection</li><li>Vitamin B Complex</li><li>Ondansetron</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Injectables')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="otc">
+                <div class="cat-icon"><i class="fas fa-box-open"></i></div>
+                <h3>OTC Products</h3>
+                <ul><li>ORS Sachets</li><li>Multivitamins</li><li>Antacids</li><li>Cough Syrups</li></ul>
+                <button class="btn-quote" onclick="sendProduct('OTC Products')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="specialty">
+                <div class="cat-icon"><i class="fas fa-ribbon"></i></div>
+                <h3>Oncology</h3>
+                <ul><li>Capecitabine</li><li>Imatinib</li><li>Paclitaxel</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Oncology')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="specialty">
+                <div class="cat-icon"><i class="fas fa-mosquito"></i></div>
+                <h3>Anti-Malarial</h3>
+                <ul><li>Artemether</li><li>Lumefantrine</li><li>Chloroquine</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Anti-Malarial')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="tablet">
+                <div class="cat-icon"><i class="fas fa-tint"></i></div>
+                <h3>Anti-Diabetic</h3>
+                <ul><li>Metformin</li><li>Glibenclamide</li><li>Glimepiride</li><li>Insulin (basic range)</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Anti-Diabetic')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="tablet">
+                <div class="cat-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3>Cardiovascular</h3>
+                <ul><li>Amlodipine</li><li>Losartan</li><li>Atenolol</li><li>Enalapril</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Cardiovascular')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="tablet">
+                <div class="cat-icon"><i class="fas fa-band-aid"></i></div>
+                <h3>Pain Management</h3>
+                <ul><li>Paracetamol</li><li>Ibuprofen</li><li>Diclofenac</li><li>Tramadol</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Pain Management')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="tablet">
+                <div class="cat-icon"><i class="fas fa-stomach"></i></div>
+                <h3>Gastrointestinal</h3>
+                <ul><li>Omeprazole</li><li>Pantoprazole</li><li>Domperidone</li><li>Loperamide</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Gastrointestinal')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="tablet">
+                <div class="cat-icon"><i class="fas fa-allergies"></i></div>
+                <h3>Anti-Allergic</h3>
+                <ul><li>Cetirizine</li><li>Loratadine</li><li>Chlorpheniramine</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Anti-Allergic')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="tablet">
+                <div class="cat-icon"><i class="fas fa-lungs"></i></div>
+                <h3>Respiratory</h3>
+                <ul><li>Salbutamol</li><li>Theophylline</li><li>Budesonide</li><li>Ambroxol Syrup</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Respiratory')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="otc">
+                <div class="cat-icon"><i class="fas fa-capsules"></i></div>
+                <h3>Vitamins &amp; Supplements</h3>
+                <ul><li>Vitamin C</li><li>Vitamin D3</li><li>Calcium Tablets</li><li>Iron + Folic Acid</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Vitamins & Supplements')">Request Quote →</button>
+            </div>
+
+            <div class="category" data-cat="specialty">
+                <div class="cat-icon"><i class="fas fa-female"></i></div>
+                <h3>Women's Health</h3>
+                <ul><li>Folic Acid</li><li>Iron Tablets</li><li>Oral Contraceptives</li></ul>
+                <button class="btn-quote" onclick="sendProduct('Women Health')">Request Quote →</button>
+            </div>
+
+        </div>
+    </section>
+
     <footer>
         <p>© 2026 Supreme Medical Agency | All Rights Reserved</p>
-
         <div class="social-links">
-
-            <a href="mailto:info@suprememedicalagency.com" target="_blank">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a href="https://www.linkedin.com/in/supreme-medical-agency-588169406" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-
-            <a href="https://x.com/suprememedical" target="_blank">
-                <i class="fab fa-x-twitter"></i>
-            </a>
-
-
+            <a href="mailto:info@suprememedicalagency.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/supreme-medical-agency-588169406" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/suprememedical" target="_blank"><i class="fab fa-x-twitter"></i></a>
         </div>
     </footer>
 
-     <!-- WHATSAPP -->
     <a href="https://wa.me/9392868579" class="whatsapp" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="24" height="24" fill="white">
-            <path
-                d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z" />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z"/></svg>
     </a>
 
-    <!-- QUOTE MODAL -->
     <div id="quoteModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h3>Request a Quote</h3>
-
             <form onsubmit="sendToWhatsApp(event)">
                 <input type="text" id="name" placeholder="Full Name" required>
                 <input type="text" id="country" placeholder="Country" required>
                 <input type="text" id="product" placeholder="Product" required>
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="tel" id="phone" placeholder="WhatsApp Number" required>
-
-                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                <button type="submit" class="btn-primary btn" style="width:100%;margin-top:12px;border-radius:30px;">Send Inquiry</button>
             </form>
         </div>
     </div>
 
-    <!-- SCRIPT -->
     <script>
-        let selectedProduct = "";
+        function toggleMenu() { document.getElementById("nav-links").classList.toggle("active"); }
 
         function openModal(product = "") {
-            selectedProduct = product;
-
             document.getElementById("quoteModal").style.display = "flex";
-
-            if (product) {
-                document.getElementById("product").value = product;
-            }
+            if (product) document.getElementById("product").value = product;
         }
-
-        function closeModal() {
-            document.getElementById("quoteModal").style.display = "none";
-        }
-
-        window.onclick = function (e) {
-            let modal = document.getElementById("quoteModal");
-
-            if (e.target === modal) {
-                closeModal();
-            }
-        }
-
-        function sendProduct(product) {
-            openModal(product);
-        }
+        function closeModal() { document.getElementById("quoteModal").style.display = "none"; }
+        window.onclick = function(e) { if (e.target === document.getElementById("quoteModal")) closeModal(); }
+        function sendProduct(p) { openModal(p); }
 
         function sendToWhatsApp(e) {
             e.preventDefault();
-
-            let name = document.getElementById("name").value;
-            let country = document.getElementById("country").value;
-            let product = document.getElementById("product").value;
-            let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-
-            let message = `Hello, I would like to request a quotation:
-
-Name: ${name}
-Country: ${country}
-Product: ${product}
-Email: ${email}
-WhatsApp: ${phone}`;
-
-            let url = "https://wa.me/9392868579?text=" + encodeURIComponent(message);
-
-            window.open(url, "_blank");
-
+            let msg = `Hello, I would like to request a quotation:\n\nName: ${document.getElementById('name').value}\nCountry: ${document.getElementById('country').value}\nProduct: ${document.getElementById('product').value}\nEmail: ${document.getElementById('email').value}\nWhatsApp: ${document.getElementById('phone').value}`;
+            window.open("https://wa.me/9392868579?text=" + encodeURIComponent(msg), "_blank");
             closeModal();
         }
-    </script>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("nav-links").classList.toggle("active");
-        }
-    </script>
-
-    <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
+        function filterProducts(cat, btn) {
+            document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.category').forEach(card => {
+                if (cat === 'all' || card.dataset.cat === cat) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
                 }
             });
-        }, {
-            threshold: 0.15
-        });
+        }
 
-        document.querySelectorAll(".fade-in").forEach(el => {
-            observer.observe(el);
-        });
+        const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); }); }, { threshold: 0.1 });
+        document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
     </script>
-
 </body>
-
 </html>
