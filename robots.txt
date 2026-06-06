@@ -1,11 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: *.jpg
-Disallow: *.jpeg
-Disallow: *.png
-Disallow: *.gif
-Disallow: *.css
-Disallow: *.js
 
 # Allow crawling of blog directory
 Allow: /blogs/
