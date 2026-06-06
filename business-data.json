@@ -1,0 +1,83 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Supreme Medical Agency",
+  "description": "Leading pharmaceutical exporter from India specializing in WHO-GMP certified generic medicines, injectables, antibiotics, OTC products, and specialized pharmaceuticals for global buyers.",
+  "url": "https://suprememedicalagency.com",
+  "foundingYear": null,
+  "businessType": "Pharmaceutical Exporter",
+  "industry": "Pharmaceuticals and Medicines",
+  "specialization": "Generic Medicine Export",
+  "certifications": ["WHO-GMP"],
+  "logo": "https://suprememedicalagency.com/assets/logo.jpg",
+  "contact": {
+    "email": "info@suprememedicalagency.com",
+    "phone": "+91-93928-68579",
+    "whatsapp": "https://wa.me/919392868579"
+  },
+  "address": {
+    "streetAddress": "78/8/A/12/2/116/D/1/A, New Vittal Nagar",
+    "city": "Kurnool",
+    "state": "Andhra Pradesh",
+    "postalCode": "518002",
+    "country": "India"
+  },
+  "socialProfiles": {
+    "instagram": "https://www.instagram.com/suprememedicalagency",
+    "linkedin": "https://www.linkedin.com/company/suprememedicalagency/",
+    "twitter": "https://x.com/suprememedical"
+  },
+  "serviceAreas": [
+    "Global",
+    "Africa",
+    "Asia",
+    "Europe",
+    "Americas",
+    "Middle East",
+    "Caribbean"
+  ],
+  "productCategories": [
+    "Tablets and Capsules",
+    "Antibiotics",
+    "Injectables",
+    "OTC Products",
+    "Oncology Medicines",
+    "Anti-Malarial Medicines",
+    "Anti-Diabetic Medicines",
+    "Cardiovascular Medicines",
+    "Pain Management Medicines",
+    "Gastrointestinal Medicines",
+    "Respiratory Medicines",
+    "Vitamins and Supplements"
+  ],
+  "services": [
+    "Generic medicine export",
+    "WHO-GMP sourced pharmaceuticals",
+    "Bulk pharmaceutical orders",
+    "Export quotations",
+    "Supply chain management",
+    "Regulatory compliance support",
+    "Pharmaceutical sourcing"
+  ],
+  "targetCustomers": [
+    "International pharmaceutical importers",
+    "Global wholesalers",
+    "Pharmacy chains",
+    "Hospital suppliers",
+    "Distribution networks",
+    "Online pharmacies"
+  ],
+  "buyersLooking": "We supply to pharmaceutical importers, wholesalers, distributors, hospital suppliers, pharmacy networks, and online pharmacies worldwide seeking WHO-GMP certified generic medicines from India.",
+  "keyStrengths": [
+    "WHO-GMP certified products",
+    "Competitive pricing",
+    "Consistent supply chain",
+    "Wide product range",
+    "Export compliance expertise",
+    "Global shipping capabilities",
+    "Quality assurance"
+  ],
+  "minimumOrderQuantity": null,
+  "packagingOptions": ["Bulk packaging", "Standard pharmaceutical packaging"],
+  "exportDestinations": "Global markets with regulatory approval"
+}
