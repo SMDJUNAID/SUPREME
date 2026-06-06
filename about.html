@@ -3,18 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Supreme Medical Agency</title>
-    <meta name="description" content="Learn about Supreme Medical Agency, a reliable Indian pharmaceutical export company delivering high-quality generic medicines to global markets with strict quality standards and timely delivery.">
+    <title>About Supreme Medical Agency | Pharmaceutical Export Company in India</title>
+    <meta name="description" content="Learn about Supreme Medical Agency, a reliable Indian pharmaceutical export company delivering WHO-GMP medicines to global markets in Africa, Middle East, Southeast Asia, Europe, and Latin America with strict quality standards and timely delivery.">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b3d91">
+    <meta name="business-type" content="Pharmaceutical Exporter">
+    <meta name="industry" content="Pharmaceuticals">
+    <meta name="service-area" content="Global">
     <link rel="canonical" href="https://suprememedicalagency.com/about.html">
+    <link rel="alternate" href="https://suprememedicalagency.com/about.html" hreflang="en" />
+    <link rel="alternate" href="https://suprememedicalagency.com/" hreflang="x-default" />
+    <link rel="alternate" type="application/json+ld" href="/business-data.json">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://suprememedicalagency.com/"},
+            {"@type": "ListItem", "position": 2, "name": "About Us", "item": "https://suprememedicalagency.com/about.html"}
+        ]
+    }
+    </script>
     <meta property="og:type" content="website">
     <meta property="og:title" content="About Us - Supreme Medical Agency">
     <meta property="og:description" content="Reliable Indian pharmaceutical export company delivering high-quality generic medicines to global markets.">
     <meta property="og:url" content="https://suprememedicalagency.com/about.html">
     <meta property="og:image" content="https://suprememedicalagency.com/assets/logo.jpg">
+    <meta property="og:image:alt" content="Supreme Medical Agency logo">
     <meta property="og:site_name" content="Supreme Medical Agency">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Supreme Medical Agency | Pharmaceutical Export Company in India">
+    <meta name="twitter:description" content="Reliable Indian pharmaceutical export company delivering high-quality generic medicines to global markets.">
+    <meta name="twitter:image" content="https://suprememedicalagency.com/assets/logo.jpg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -25,6 +46,42 @@
         "logo": "https://suprememedicalagency.com/assets/logo.jpg",
         "sameAs": [
             "https://www.linkedin.com/company/suprememedicalagency/"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "@id": "https://suprememedicalagency.com/about.html#webpage",
+        "url": "https://suprememedicalagency.com/about.html",
+        "name": "About Supreme Medical Agency",
+        "description": "Learn about Supreme Medical Agency, a reliable Indian pharmaceutical export company delivering high-quality generic medicines to global markets.",
+        "isPartOf": {
+            "@id": "https://suprememedicalagency.com/#website"
+        },
+        "about": {
+            "@id": "https://suprememedicalagency.com/#organization"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://suprememedicalagency.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://suprememedicalagency.com/about.html"
+            }
         ]
     }
     </script>
@@ -46,7 +103,9 @@
         nav ul a { color: white; text-decoration: none; font-weight: 500; opacity: 0.85; transition: all 0.2s; padding-bottom: 3px; }
         nav ul a:hover { opacity: 1; border-bottom: 2px solid rgba(255,255,255,0.4); }
         nav ul a.active { border-bottom: 2px solid var(--accent); font-weight: 600; opacity: 1; }
-        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: white; }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: white; background: transparent; border: 0; line-height: 1; }
+        .skip-link { position: absolute; left: -999px; top: 12px; background: white; color: var(--primary); padding: 8px 12px; border-radius: 6px; z-index: 10000; font-weight: 700; }
+        .skip-link:focus { left: 12px; }
 
         /* HERO */
         .hero { background: var(--primary); color: white; text-align: center; padding: 60px 20px; position: relative; overflow: hidden; }
@@ -55,7 +114,7 @@
         .hero-content { position: relative; z-index: 1; }
         .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
         .hero p { font-size: 1rem; opacity: 0.88; margin-bottom: 22px; }
-        .btn { padding: 12px 26px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.95rem; transition: all 0.25s; display: inline-block; }
+        .btn { padding: 12px 26px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.95rem; transition: all 0.25s; display: inline-block; text-decoration: none; }
         .btn-primary { background: var(--accent); color: white; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(59,178,115,0.4); }
 
@@ -127,30 +186,33 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <nav>
         <a href="/" class="nav-brand">
-            <img src="assets/logo.jpg" alt="Supreme Medical Agency Logo">
+            <img src="/assets/logo.jpg" alt="Supreme Medical Agency logo">
             <span>Supreme Medical</span>
         </a>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" onclick="toggleMenu()">☰</button>
         <ul id="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/about.html" class="active">About Us</a></li>
             <li><a href="/products.html">Products</a></li>
+            <li><a href="/blogs/blog.html">Blog</a></li>
             <li><a href="/certification.html">Certifications</a></li>
             <li><a href="/contact.html">Contact Us</a></li>
         </ul>
     </nav>
 
+    <main id="main-content">
     <section class="hero fade-in">
-        <svg class="hero-bg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hero-bg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <circle cx="100" cy="80" r="160"/><circle cx="1100" cy="250" r="200"/><circle cx="600" cy="30" r="90"/>
         </svg>
         <div class="hero-content">
             <h1>About Supreme Medical Agency</h1>
             <p>Your trusted partner for exporting high-quality generic medicines worldwide.</p>
-            <a href="/products.html"><button class="btn btn-primary">View Our Products</button></a>
+            <a href="/products.html" class="btn btn-primary">View Our Products</a>
         </div>
     </section>
 
@@ -166,6 +228,7 @@
 
                 <p>We work with WHO-GMP certified manufacturers and ensure strict quality control, competitive pricing, and timely delivery across all markets we serve.</p>
                 <p>With a strong logistics network, we ensure safe and efficient international shipping, meeting all regulatory and compliance requirements.</p>
+                <p>Explore our <a href="/products.html" style="color:#0b3d91; text-decoration:underline;">product categories</a> or <a href="/contact.html" style="color:#0b3d91; text-decoration:underline;">contact us</a> for bulk export pricing and market-specific guidance.</p>
 
                 <p class="markets-label">Key Markets We Serve</p>
                 <div class="markets-grid">
@@ -195,19 +258,20 @@
             <div class="cert-pill"><i class="fas fa-check-circle"></i> ISO Certified</div>
         </div>
     </div>
+    </main>
 
     <footer>
         <p>© 2026 Supreme Medical Agency | All Rights Reserved</p>
         <div class="social-links">
-            <a href="mailto:info@suprememedicalagency.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/suprememedicalagency/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://x.com/suprememedical" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="mailto:info@suprememedicalagency.com" aria-label="Email Supreme Medical Agency"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank" rel="noopener noreferrer" aria-label="Supreme Medical Agency on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/suprememedicalagency/" target="_blank" rel="noopener noreferrer" aria-label="Supreme Medical Agency on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://x.com/suprememedical" target="_blank" rel="noopener noreferrer" aria-label="Supreme Medical Agency on X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
         </div>
     </footer>
 
-    <a href="https://wa.me/9392868579" class="whatsapp" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z"/></svg>
+    <a href="https://wa.me/919392868579" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contact Supreme Medical Agency on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white" aria-hidden="true" focusable="false"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z"/></svg>
     </a>
 
     <script>

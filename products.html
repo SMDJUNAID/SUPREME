@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Supreme Medical Agency</title>
-    <meta name="description" content="Explore Supreme Medical Agency's pharmaceutical product range including tablets, capsules, injectables, antibiotics, oncology, OTC products, and WHO-GMP certified medicines for export.">
+    <title>Pharmaceutical Products for Export | Supreme Medical Agency</title>
+    <meta name="description" content="Explore pharmaceutical export categories from Supreme Medical Agency, including WHO-GMP tablets, capsules, injectables, antibiotics, oncology, OTC products, and global-grade medicines for buyers in Africa, Middle East, Asia, Europe, and Latin America.">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b3d91">
+    <meta name="business-type" content="Pharmaceutical Exporter">
+    <meta name="industry" content="Pharmaceuticals">
+    <meta name="service-area" content="Global">
     <link rel="canonical" href="https://suprememedicalagency.com/products.html">
+    <link rel="alternate" href="https://suprememedicalagency.com/products.html" hreflang="en" />
+    <link rel="alternate" href="https://suprememedicalagency.com/" hreflang="x-default" />
+    <link rel="alternate" type="application/json+ld" href="/business-data.json">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="shortcut icon" href="/favicon.svg">
@@ -15,8 +22,12 @@
     <meta property="og:description" content="Pharmaceutical product range including tablets, capsules, injectables, antibiotics, oncology, OTC products, and WHO-GMP sourced medicines for export.">
     <meta property="og:url" content="https://suprememedicalagency.com/products.html">
     <meta property="og:image" content="https://suprememedicalagency.com/assets/logo.jpg">
+    <meta property="og:image:alt" content="Supreme Medical Agency logo">
     <meta property="og:site_name" content="Supreme Medical Agency">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pharmaceutical Products for Export | Supreme Medical Agency">
+    <meta name="twitter:description" content="Tablets, capsules, injectables, antibiotics, oncology, OTC products, and WHO-GMP sourced medicines for export.">
+    <meta name="twitter:image" content="https://suprememedicalagency.com/assets/logo.jpg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -27,6 +38,42 @@
         "logo": "https://suprememedicalagency.com/assets/logo.jpg",
         "sameAs": [
             "https://www.linkedin.com/company/suprememedicalagency/"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://suprememedicalagency.com/products.html#webpage",
+        "url": "https://suprememedicalagency.com/products.html",
+        "name": "Pharmaceutical Products for Export",
+        "description": "Pharmaceutical export categories supplied by Supreme Medical Agency, including tablets, capsules, injectables, antibiotics, oncology, OTC products, and WHO-GMP sourced medicines.",
+        "isPartOf": {
+            "@id": "https://suprememedicalagency.com/#website"
+        },
+        "about": {
+            "@id": "https://suprememedicalagency.com/#organization"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://suprememedicalagency.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Products",
+                "item": "https://suprememedicalagency.com/products.html"
+            }
         ]
     }
     </script>
@@ -52,6 +99,23 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AggregateOffer",
+        "name": "WHO-GMP Certified Pharmaceutical Products for Export",
+        "description": "Bulk pharmaceutical supplies from India - generic medicines, injectables, antibiotics, and OTC products",
+        "seller": {
+            "@type": "Organization",
+            "name": "Supreme Medical Agency",
+            "url": "https://suprememedicalagency.com"
+        },
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "offerCount": "12+",
+        "url": "https://suprememedicalagency.com/products.html"
+    }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -68,7 +132,9 @@
         nav ul a { color: white; text-decoration: none; font-weight: 500; opacity: 0.85; transition: all 0.2s; padding-bottom: 3px; }
         nav ul a:hover { opacity: 1; border-bottom: 2px solid rgba(255,255,255,0.4); }
         nav ul a.active { border-bottom: 2px solid var(--accent); font-weight: 600; opacity: 1; }
-        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: white; }
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: white; background: transparent; border: 0; line-height: 1; }
+        .skip-link { position: absolute; left: -999px; top: 12px; background: white; color: var(--primary); padding: 8px 12px; border-radius: 6px; z-index: 10000; font-weight: 700; }
+        .skip-link:focus { left: 12px; }
 
         /* HERO */
         .hero { background: var(--primary); color: white; text-align: center; padding: 60px 20px; position: relative; overflow: hidden; }
@@ -77,7 +143,7 @@
         .hero-content { position: relative; z-index: 1; }
         .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
         .hero p { font-size: 1rem; opacity: 0.88; margin-bottom: 22px; }
-        .btn { padding: 12px 26px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.95rem; transition: all 0.25s; }
+        .btn { padding: 12px 26px; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; font-size: 0.95rem; transition: all 0.25s; text-decoration: none; }
         .btn-primary { background: var(--accent); color: white; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(59,178,115,0.4); }
 
@@ -145,30 +211,34 @@
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <nav>
         <a href="/" class="nav-brand">
-            <img src="assets/logo.jpg" alt="Supreme Medical Agency Logo">
+            <img src="/assets/logo.jpg" alt="Supreme Medical Agency logo">
             <span>Supreme Medical</span>
         </a>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation menu" onclick="toggleMenu()">☰</button>
         <ul id="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/about.html">About Us</a></li>
             <li><a href="/products.html" class="active">Products</a></li>
+            <li><a href="/blogs/blog.html">Blog</a></li>
             <li><a href="/certification.html">Certifications</a></li>
             <li><a href="/contact.html">Contact Us</a></li>
         </ul>
     </nav>
 
+    <main id="main-content">
     <section class="hero fade-in">
-        <svg class="hero-bg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hero-bg" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <circle cx="100" cy="80" r="160"/><circle cx="1100" cy="250" r="200"/><circle cx="600" cy="30" r="90"/>
         </svg>
         <div class="hero-content">
             <h1>Our Product Range</h1>
-            <p>Explore a wide portfolio of WHO-GMP certified pharmaceutical products.</p>
+            <p>Explore a wide portfolio of WHO-GMP sourced pharmaceutical products.</p>
             <button class="btn btn-primary" onclick="openModal()">Request a Quote</button>
+            <p style="margin-top:16px; opacity:0.88; font-size:0.95rem; max-width:660px; margin-left:auto; margin-right:auto;">We support bulk pharmaceutical export inquiries for global buyers, with logistics-ready packaging, documentation support, and fast WhatsApp response.</p>
         </div>
     </section>
 
@@ -288,19 +358,20 @@
 
         </div>
     </section>
+    </main>
 
     <footer>
         <p>© 2026 Supreme Medical Agency | All Rights Reserved</p>
         <div class="social-links">
-            <a href="mailto:info@suprememedicalagency.com" target="_blank"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/suprememedicalagency/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://x.com/suprememedical" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="mailto:info@suprememedicalagency.com" aria-label="Email Supreme Medical Agency"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/suprememedicalagency?igsh=YjJwcGRnZGw2M2Fh" target="_blank" rel="noopener noreferrer" aria-label="Supreme Medical Agency on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/suprememedicalagency/" target="_blank" rel="noopener noreferrer" aria-label="Supreme Medical Agency on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="https://x.com/suprememedical" target="_blank" rel="noopener noreferrer" aria-label="Supreme Medical Agency on X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
         </div>
     </footer>
 
-    <a href="https://wa.me/9392868579" class="whatsapp" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.61.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.66.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.32-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.95.302 1.814.26 2.498.158.762-.114 2.34-.957 2.67-1.88.33-.924.33-1.716.23-1.88-.099-.165-.362-.264-.757-.462z"/></svg>
+    <a href="https://wa.me/919392868579" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contact Supreme Medical Agency on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="white" aria-hidden="true" focusable="false"><path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.885.754 5.699 2.186 8.166L0 32l7.645-2.003a15.91 15.91 0 0 0 8.355 2.395c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.205a13.16 13.16 0 0 1-6.708-1.83l-.48-.285-4.535 1.188 1.21-4.422-.312-.503a13.15 13.15 0 1 1 10.825 5.852zm7.23-9.834c-.395-.198-2.34-1.155-2.702-1.287-.362-.132-.625-.198-.888.198s-1.02 1.287-1.25 1.552c-.23.264-.46.297-.855.099-.395-.198-1.667-.615-3.175-1.963-1.174-1.048-1.967-2.34-2.197-2.735-.23-.396-.025-.610.173-.808.178-.177.395-.462.592-.693.197-.231.263-.396.395-.660.132-.264.066-.495-.033-.693-.099-.198-.888-2.145-1.217-2.94-.320-.768-.646-.664-.888-.676l-.755-.013c-.264 0-.693.099-1.056.495s-1.386 1.353-1.386 3.3 1.419 3.827 1.617 4.091c.198.264 2.796 4.267 6.776 5.98.947.409 1.685.653 2.261.836.950.302 1.814.260 2.498.158.762-.114 2.340-.957 2.670-1.880.330-.924.330-1.716.230-1.880-.099-.165-.362-.264-.757-.462z"/></svg>
     </a>
 
     <div id="quoteModal" class="modal">
@@ -308,11 +379,11 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h3>Request a Quote</h3>
             <form onsubmit="sendToWhatsApp(event)">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="text" id="country" placeholder="Country" required>
-                <input type="text" id="product" placeholder="Product" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="tel" id="phone" placeholder="WhatsApp Number" required>
+                <input type="text" id="name" name="name" aria-label="Full Name" placeholder="Full Name" autocomplete="name" required>
+                <input type="text" id="country" name="country" aria-label="Country" placeholder="Country" autocomplete="country-name" required>
+                <input type="text" id="product" name="product" aria-label="Product" placeholder="Product" required>
+                <input type="email" id="email" name="email" aria-label="Email" placeholder="Email" autocomplete="email" required>
+                <input type="tel" id="phone" name="phone" aria-label="WhatsApp Number" placeholder="WhatsApp Number" autocomplete="tel" required>
                 <button type="submit" class="btn-primary btn" style="width:100%;margin-top:12px;border-radius:30px;">Send Inquiry</button>
             </form>
         </div>
@@ -332,7 +403,7 @@
         function sendToWhatsApp(e) {
             e.preventDefault();
             let msg = `Hello, I would like to request a quotation:\n\nName: ${document.getElementById('name').value}\nCountry: ${document.getElementById('country').value}\nProduct: ${document.getElementById('product').value}\nEmail: ${document.getElementById('email').value}\nWhatsApp: ${document.getElementById('phone').value}`;
-            window.open("https://wa.me/9392868579?text=" + encodeURIComponent(msg), "_blank");
+            window.open("https://wa.me/919392868579?text=" + encodeURIComponent(msg), "_blank", "noopener,noreferrer");
             closeModal();
         }
 

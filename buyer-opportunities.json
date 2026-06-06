@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "businessProfile": {
+    "company": "Supreme Medical Agency",
+    "industry": "Pharmaceutical Export",
+    "website": "https://suprememedicalagency.com",
+    "contact": "info@suprememedicalagency.com",
+    "whatsapp": "+919392868579",
+    "location": "Kurnool, Andhra Pradesh, India",
+    "status": "Actively seeking business partnerships and bulk orders"
+  },
+  "targetBuyers": [
+    {
+      "type": "Pharmaceutical Importer",
+      "description": "International pharmaceutical distributors and importers looking for WHO-GMP certified generic medicines",
+      "region": "Global"
+    },
+    {
+      "type": "Hospital Chains",
+      "description": "Large hospital networks requiring regular supply of medicines and injectables",
+      "region": "Global"
+    },
+    {
+      "type": "Pharmacy Networks",
+      "description": "Retail pharmacy chains and online pharmacies seeking bulk pharmaceutical supplies",
+      "region": "Global"
+    },
+    {
+      "type": "Wholesale Distributors",
+      "description": "Pharmaceutical wholesalers and distribution networks across different countries",
+      "region": "Global"
+    },
+    {
+      "type": "NGO & Healthcare Organizations",
+      "description": "Non-profit organizations providing healthcare services and medicines to communities",
+      "region": "Global"
+    },
+    {
+      "type": "Export Traders",
+      "description": "International pharmaceutical traders and export companies",
+      "region": "Global"
+    },
+    {
+      "type": "Private Label Partners",
+      "description": "Companies seeking private label or contract manufacturing",
+      "region": "Global"
+    }
+  ],
+  "competitiveAdvantages": [
+    "WHO-GMP Certified Facilities",
+    "Competitive Pricing with Quality Assurance",
+    "Wide Range of Pharmaceutical Products",
+    "Reliable Supply Chain",
+    "Export Compliance Expertise",
+    "Fast Processing & Shipping",
+    "Flexible Minimum Order Quantities",
+    "Long-term Partnership Approach"
+  ],
+  "businessOpportunities": {
+    "bulkOrders": {
+      "description": "Supply of bulk pharmaceutical orders for international markets",
+      "minimumVolume": "Flexible based on product"
+    },
+    "privateLabel": {
+      "description": "Private labeling and contract manufacturing services",
+      "minimumVolume": "On request"
+    },
+    "regularSupply": {
+      "description": "Ongoing supply partnerships for distributors and pharmacy chains",
+      "minimumVolume": "Negotiable"
+    },
+    "specialtyCalls": {
+      "description": "Custom pharmaceutical sourcing for specialized requirements",
+      "minimumVolume": "On request"
+    }
+  },
+  "keyMessage": "If you are a pharmaceutical importer, distributor, hospital chain, or pharmacy network looking for WHO-GMP certified generic medicines from India, Supreme Medical Agency is your ideal supplier. We offer competitive pricing, consistent quality, and reliable export services to buyers worldwide."
+}
